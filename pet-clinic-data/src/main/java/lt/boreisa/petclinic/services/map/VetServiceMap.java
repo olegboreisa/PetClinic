@@ -1,11 +1,13 @@
 package lt.boreisa.petclinic.services.map;
 
 import lt.boreisa.petclinic.model.Vet;
-import lt.boreisa.petclinic.services.CrudService;
+import lt.boreisa.petclinic.services.VetService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
-public class VetServiceMap extends AbstractMapService <Vet, Long> implements CrudService<Vet, Long> {
+@Service
+public class VetServiceMap extends AbstractMapService <Vet, Long> implements VetService{
 
     @Override
     public Set<Vet> findAll() {
@@ -31,4 +33,6 @@ public class VetServiceMap extends AbstractMapService <Vet, Long> implements Cru
     public void deleteById(Long id) {
         super.deleteById(id);
     }
+
+
 }
